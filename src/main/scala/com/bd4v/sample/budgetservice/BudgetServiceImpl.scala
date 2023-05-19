@@ -5,6 +5,7 @@ import akka.actor.ActorSystem
 import akka.actor.typed.ActorRef
 import akka.stream.Materializer
 import akka.stream.scaladsl.Source
+import com.bd4v.sample.budgetservice.actor.DispatcherActor
 import com.bd4v.sample.budgetservice.model.{AdId, ConnectionId}
 import org.slf4j.LoggerFactory
 import com.bd4v.sample.budgetservice.proto.{AdStatus, BudgetService, SubscriptionRequest}

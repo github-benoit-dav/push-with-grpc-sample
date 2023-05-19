@@ -1,8 +1,9 @@
-package com.bd4v.sample.budgetservice
+package com.bd4v.sample.budgetservice.actor
 
 import akka.actor.typed._
 import akka.actor.typed.scaladsl.{ActorContext, Behaviors}
 import akka.stream.BoundedSourceQueue
+import com.bd4v.sample.budgetservice.actor
 import com.bd4v.sample.budgetservice.model.{AdId, ConnectionId}
 import com.bd4v.sample.budgetservice.proto.{AdStatus, BudgetStatus}
 
@@ -68,7 +69,7 @@ object DispatcherActor {
     val name = s"computer-${adId.value}-$computerIdCounter"
     computerIdCounter += 1
     val ref = context.spawn(
-      BudgetStatusComputerActor(adId, context.self),
+      actor.BudgetStatusComputerActor(adId, context.self),
       name
     )
     context.watch(ref)

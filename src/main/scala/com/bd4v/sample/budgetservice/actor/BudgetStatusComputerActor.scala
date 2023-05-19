@@ -1,4 +1,4 @@
-package com.bd4v.sample.budgetservice
+package com.bd4v.sample.budgetservice.actor
 
 import akka.actor.typed.scaladsl.{Behaviors, TimerScheduler}
 import akka.actor.typed.{ActorRef, Behavior}

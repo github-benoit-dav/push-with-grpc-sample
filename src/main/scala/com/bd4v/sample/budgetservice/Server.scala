@@ -5,6 +5,7 @@ import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.{ActorSystem, Behavior, Terminated}
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
+import com.bd4v.sample.budgetservice.actor.DispatcherActor
 import com.typesafe.config.ConfigFactory
 import org.slf4j.LoggerFactory
 import com.bd4v.sample.budgetservice.proto.BudgetServiceHandler
