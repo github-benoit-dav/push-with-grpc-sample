@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.bd4v.sample.budgetservice;
+option java_package = "com.bd4v.sample.budgetservice.proto";
+
+service BudgetService {
+    rpc SubscribeToStatus (stream SubscriptionRequest)
+        returns (stream AdStatus);
+}
+
+message SubscriptionRequest {
+    int64 ad_id = 1;
+    bool subscription_toggle = 2;
+}
+
+enum BudgetStatus {
+    BudgetAvailable = 0;
+    BudgetExhausted = 1;
+    BudgetError = 2;
+}
+
+message AdStatus {
+    int64 ad_id = 1;
+    BudgetStatus status = 2;
+}
